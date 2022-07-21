@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="kalkual.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Geometria</title>
+</head>
+
+<body>
+
+    <header class="container-fluid">
+        <h1>Áram számítások</h1>
+    </header>
+
+    <div class="container">
+        <div class="card kártya">
+            <label for="aramerosseg">Áramerősség</label>
+            <div class="row">
+                <div class="col-6">
+                    <input  onchange="törlés()" type="number" name="aramerosseg" id="aramerosseg" value="0">
+                    <p style="display: inline">A</p>
+                </div>
+                <div class="col-6"></div>
+            </div>
+                        
+            <label for="feszultseg">Feszültség</label>
+            <div class="row">
+                <div class="col-6">
+                    <input onchange="törlés()" type="number" name="feszultseg" id="feszultseg" value="0">
+                    <p style="display: inline">V</p>
+                </div>
+                <div class="col-6"></div>
+            </div>
+
+            <label for="teljesitmeny">Teljesítmény</label>
+            <div class="row">
+                <div class="col-6">
+                    <input onchange="törlés()" type="number" name="teljesitmeny" id="teljesitmeny" value="0">
+                    <p style="display: inline">W</p>
+                </div>
+                <div class="col-6"></div>
+            </div>
+                        
+            <label for="ido">Fogyasztás ideje</label>
+            <div class="row">
+                <div class="col-6 col-md-10 col-sm-11">
+                    <input onchange="törlés()" type="number" name="ido" id="ido" value="0">
+                    <select class="w-10 m-2" name="i_mertekegy" id="i_mertekegy" onchange="törlés()">
+                        <option value="h">óra</option>
+                        <option value="p">perc</option>
+                        <option value="mp">másodperc</option>
+                    </select>
+                </div>
+                <div class="col-6 col-md-2 col-sm-1"></div>
+            </div>
+
+            <label for="ar">Ár fajta</label>
+            <div class="row">
+                <div class="col-6">
+                    <select class="w-50 m-2" name="ar_fajta" id="ar_fajta" onchange="törlés()">
+                        <option value="csok">rezsicsökkentett (36,9 forint/kWh)</option>
+                        <option value="piaci">piaci (242 forint/kWh)</option>
+                    </select>
+                </div>
+                <div class="col-6"></div>
+            </div>
+
+            <input onclick="kiszámol()" type="button" value="Számolás">
+            <table class="table">
+                <tr>
+                    <td class="kiemelés">Áramerősség:</td>
+                    <td class="eredmény">
+                        <p id="aramerosseg_ki"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kiemelés">Feszültség:</td>
+                    <td class="eredmény">
+                        <p id="feszultseg_ki"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kiemelés">Teljesítmény:</td>
+                    <td class="eredmény">
+                        <p id="teljesitmeny_ki"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kiemelés">Fogyasztás:</td>
+                    <td class="eredmény">
+                        <p id="fogyasztas_ki"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kiemelés">Ára:</td>
+                    <td class="eredmény">
+                        <p id="ar_ki"></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
